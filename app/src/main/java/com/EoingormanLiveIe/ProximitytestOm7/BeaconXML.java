@@ -48,6 +48,8 @@ public class BeaconXML {
         return beaconName;
     }
 
+
+
     public final BeaconID GetID() {
         return beaconID;
     }

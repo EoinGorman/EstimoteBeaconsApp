@@ -14,7 +14,8 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        EstimoteSDK.initialize(getApplicationContext(), "proximitytest-om7", "d5f5b660bc2b8130ce9626cda4089e9a");
+        //Enables communication with Estimote Cloud API
+        //EstimoteSDK.initialize(getApplicationContext(), "proximitytest-om7", "d5f5b660bc2b8130ce9626cda4089e9a");
 
         // uncomment to enable debug-level logging
         // it's usually only a good idea when troubleshooting issues with the Estimote SDK

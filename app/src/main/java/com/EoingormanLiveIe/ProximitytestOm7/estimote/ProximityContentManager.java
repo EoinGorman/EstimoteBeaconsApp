@@ -6,15 +6,17 @@ import java.util.List;
 
 public class ProximityContentManager {
 
+    private static ProximityContentManager instance = null;
     private NearestBeaconManager nearestBeaconManager;
 
     private Listener listener;
+    private static boolean isInitialised;
 
-    public ProximityContentManager(Context context,
-                                   List<BeaconID> beaconIDs,
-                                   BeaconContentFactory beaconContentFactory) {
-        final BeaconContentCache beaconContentCache = new BeaconContentCache(beaconContentFactory);
+    private ProximityContentManager() {
+    }
 
+    public void Initialise(Context context, List<BeaconID> beaconIDs) {
+        isInitialised = true;
         nearestBeaconManager = new NearestBeaconManager(context, beaconIDs);
         nearestBeaconManager.setListener(new NearestBeaconManager.Listener() {
             @Override
@@ -24,18 +26,25 @@ public class ProximityContentManager {
                 }
 
                 if (beaconID != null) {
-                    beaconContentCache.getContent(beaconID, new BeaconContentFactory.Callback() {
-                        @Override
-                        public void onContentReady(Object content) {
-                            listener.onContentChanged(content);
-                        }
-                    });
-                } else {
+                    //
+                    listener.onContentChanged(beaconID.getMajor());
+                }
+                else {
                     listener.onContentChanged(null);
                 }
             }
         });
+    }
 
+    public static ProximityContentManager getInstance() {
+        if(instance == null) {
+            instance = new ProximityContentManager();
+        }
+        return instance;
+    }
+
+    public static boolean IsInitialised() {
+        return isInitialised;
     }
 
     public void setListener(Listener listener) {
@@ -56,5 +65,10 @@ public class ProximityContentManager {
 
     public void destroy() {
         nearestBeaconManager.destroy();
+        isInitialised = false;
+    }
+
+    public BeaconID GetNearestBeacon() {
+        return nearestBeaconManager.CurrentNearestBeacon();
     }
 }

@@ -1,0 +1,7 @@
+#Mon Oct 03 22:17:11 BST 2016
+base.0=C\:\\New Programs\\Programs\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_7e347892b6f3f91683bc017388c6211c58ad3853
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\New Programs\\Programs\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_e316d289f4730b5f354817615be4ef368aaa5196\\classes.dex
+base.1=C\:\\New Programs\\Programs\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_e316d289f4730b5f354817615be4ef368aaa5196
+file.0=C\:\\New Programs\\Programs\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_7e347892b6f3f91683bc017388c6211c58ad3853\\classes.dex

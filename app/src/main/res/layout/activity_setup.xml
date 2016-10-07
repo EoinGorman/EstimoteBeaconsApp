@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_setup"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.EoingormanLiveIe.ProximitytestOm7.SetupActivity"
+    android:weightSum="6">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"/>
+    <Button
+        android:text="Start"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/btn_start_app"
+        style="@android:style/Widget.DeviceDefault.Light.Button.Small"
+        android:layout_weight="1"
+        android:onClick="StartButton" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <Button
+        android:text="Refresh Content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/btn_refresh_content"
+        style="@android:style/Widget.DeviceDefault.Light.Button.Small"
+        android:layout_weight="1"
+        android:onClick="RefreshContent"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <Button
+        android:text="Quit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/btn_quit"
+        style="@android:style/Widget.DeviceDefault.Light.Button.Small"
+        android:layout_weight="1"
+        android:onClick="QuitButton" />
+
+</LinearLayout>

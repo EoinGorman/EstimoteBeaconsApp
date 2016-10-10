@@ -1,142 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     api-level="22"
-    density="tvdpi"
+    density="xhdpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="20974559043468"
-    token="3352944444308320365"
-    verifier="COLD_SWAP_REQUESTED" >
+    timestamp="69929828085131"
+    token="2011144311170573595"
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="553" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="82" />
     <task
         name="verifier"
-        duration="0" />
+        duration="33" />
+
+    <artifact
+        location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="6239294495438"
+        timestamp="69929828085131"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\outputs\apk\app-debug.apk"
-            type="MAIN" />
-    </build>
-    <build
-        timestamp="11020083247944"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_777bf3037d03275ea1315a8e672accd79b8527de\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_4d2795f2c21b061ea3b2fcbb77eb2813db897e96\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_5c76cc912587bc1e07970d0d6a9fbcf858886003\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_d90b43a1cafe9e57ee2ca3ce654a30d1961a9471\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_334b5ab01769d21a8289a553a1b0d34cb9d45b11\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_2338a83c34b657146a8c2ee376d8d4167a641c75\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_d98797947ffea6204a3a17b70412a7d71770ad66\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_321ba4a602ed9ea40e13fb7dab55233ee60979f3\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_ea75731ed3b14c674cb0a94c5e7bef7c6eb3a387\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_337ff474f2e84ad742b70c4ba1000b1b38823f08\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_18587b955b8e36cca6eea4aa4bf9d1a7c427f637\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_963bf5353941615b9a58680b494143e2cc830059\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_146b26dc8a511de542e976eb647ebcb1fb2a1858\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.estimote-sdk-0.11.1_74e45985d889affb05d1da700ed38a40dbe2eee6\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_b80d9fd0fe037a006bef077e7affdcf9e1f9b957\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_72a6cfc9215f971e98ff88314205a1cfe16c2de9\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2d84d7dbad5e2c1654bad7074abfa8d42dae5a3e\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_390c52dc74db319c01a72b17dc98563b5b18464a\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_3e72423958a08474ea2eadc8949a0c0fa97aef51\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_ffddba0aafbbe1ba9356d513f56bf590d34e03fa\classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="20894366507807"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="20974559043468"
-        verifier="COLD_SWAP_REQUESTED" />
-    <build
-        timestamp="209711906336668"
-        verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\New Programs\Programs\EstimoteSDK\ProximitytestOm7\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
 

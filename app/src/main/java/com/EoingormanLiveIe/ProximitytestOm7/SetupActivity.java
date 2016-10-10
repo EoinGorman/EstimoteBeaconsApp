@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.repackaged.retrofit_v1_9_0.retrofit.http.GET;
@@ -31,6 +32,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import static android.R.attr.path;
+import static com.estimote.sdk.EstimoteSDK.getApplicationContext;
 
 public class SetupActivity extends AppCompatActivity {
     public final static String DOWNLOAD_PATH  = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/";
@@ -60,6 +62,9 @@ public class SetupActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
         }
+        else {
+            Toast.makeText(SetupActivity.this,"Please Refresh Content.", Toast.LENGTH_LONG).show();
+        }
     }
 
     //This button will start the download of all necessary content by reading from an xml file
@@ -67,11 +72,13 @@ public class SetupActivity extends AppCompatActivity {
         if(isNetworkAvailable()) {
             //Disable button, re-enable when download completes
 
+            Toast.makeText(SetupActivity.this,"Starting Download...", Toast.LENGTH_SHORT).show();
             //Start download of all content
             GetAllContent();
         }
         else{
             //Display message to connect to internet
+            Toast.makeText(SetupActivity.this,"Internet Connection Required.", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -180,10 +187,16 @@ private class BeaconsDownloadTask extends AsyncTask<Void, Void, Void> {
     protected Void doInBackground(Void... arg0) {
         //Download the file
         try {
-            Downloader.DownloadFromUrl("https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/beacons.xml",
-                                        new FileOutputStream(DOWNLOAD_PATH.toString() + BEACONS_XML));
+            if(Downloader.DownloadFromUrl("https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/beacons.xml",
+                                        new FileOutputStream(DOWNLOAD_PATH.toString() + BEACONS_XML))) {
+                Toast.makeText(SetupActivity.this,"Downloading from: https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/beacons.xml", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(getApplicationContext(),"Download Failed: https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/beacons.xml", Toast.LENGTH_SHORT).show();
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            Toast.makeText(SetupActivity.this,"Error: " + e.toString(), Toast.LENGTH_LONG).show();
         }
 
         return null;
@@ -205,11 +218,17 @@ private class BeaconsDownloadTask extends AsyncTask<Void, Void, Void> {
             //Download the file
             try {
                 for(int i = 0; i < arg0[0].size(); i++) {
-                    Downloader.DownloadFromUrl("https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/Items/" + arg0[0].get(i) + ".xml",
-                            new FileOutputStream(DOWNLOAD_PATH.toString() + arg0[0].get(i) + ".xml"));
+                    if(Downloader.DownloadFromUrl("https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/Items/" + arg0[0].get(i) + ".xml",
+                            new FileOutputStream(DOWNLOAD_PATH.toString() + arg0[0].get(i) + ".xml"))) {
+                        Toast.makeText(SetupActivity.this,"Downloading from: " + arg0[0], Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(),"Download Failed: " + arg0[0], Toast.LENGTH_SHORT).show();
+                    }
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
+                Toast.makeText(SetupActivity.this,"Error: " + e.toString(), Toast.LENGTH_LONG).show();
             }
 
             return arg0[0];
@@ -228,9 +247,15 @@ private class BeaconsDownloadTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected Void doInBackground(String... arg0) {
             try {
-                Downloader.DownloadFromUrl(arg0[0], new FileOutputStream(arg0[1]));
+                if(Downloader.DownloadFromUrl(arg0[0], new FileOutputStream(arg0[1]))) {
+                    Toast.makeText(SetupActivity.this,"Downloading from: " + arg0[0], Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"Download Failed: " + arg0[0], Toast.LENGTH_SHORT).show();
+                }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
+                Toast.makeText(SetupActivity.this,"Error: " + e.toString(), Toast.LENGTH_LONG).show();
             }
 
             return null;

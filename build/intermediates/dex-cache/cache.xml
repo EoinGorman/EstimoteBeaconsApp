@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="4525afe6938c1db2279838d7a26e243c44b4a532">
+        sha1="3e0f43e4a15a959db770ced9127d6e103ffd9ce2">
         <dex dex="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_390c52dc74db319c01a72b17dc98563b5b18464a\classes.dex" />
     </item>
     <item
@@ -178,7 +178,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="ebc484c29faf0772b45111b0fe240f982da6b402">
+        sha1="91d7e7a2272a3206f8b1b82d9b91816b3cadf6c4">
         <dex dex="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2d84d7dbad5e2c1654bad7074abfa8d42dae5a3e\classes.dex" />
     </item>
 

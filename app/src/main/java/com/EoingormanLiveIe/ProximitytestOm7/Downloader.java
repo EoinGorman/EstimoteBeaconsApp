@@ -1,6 +1,7 @@
 package com.EoingormanLiveIe.ProximitytestOm7;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -9,6 +10,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+
+import static com.estimote.sdk.EstimoteSDK.getApplicationContext;
 
 /*
  * Helper class for downloading a file.
@@ -27,7 +30,7 @@ public class Downloader {
      * @param URL - the url of the file to download
      * @param fos - a FileOutputStream to save the downloaded file to.
      ************************************************/
-    public static void DownloadFromUrl(String URL, FileOutputStream fos) {  //this is the downloader method
+    public static boolean DownloadFromUrl(String URL, FileOutputStream fos) {  //this is the downloader method
         try {
 
             String modifiedURL = URL.replaceAll("\\s","");
@@ -80,8 +83,10 @@ public class Downloader {
             Log.d(myTag, "download ready in "
                     + ((System.currentTimeMillis() - startTime))
                     + " milisec");
+            return true;
         } catch (IOException e) {
             Log.d(myTag, "Error: " + e);
+            return false;
         }
     }
 }

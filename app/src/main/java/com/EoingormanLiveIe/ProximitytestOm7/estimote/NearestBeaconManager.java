@@ -36,6 +36,7 @@ public class NearestBeaconManager {
                 checkForNearestBeacon(list);
             }
         });
+        beaconManager.setBackgroundScanPeriod(1000, 0); //Do not set scanPeriod less than 1 second, beacons only broadcast every 950ms
     }
 
     public void setListener(Listener listener) {

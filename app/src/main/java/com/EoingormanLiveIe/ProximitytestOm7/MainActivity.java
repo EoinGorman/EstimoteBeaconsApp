@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         //If we haven't made a proximity manager yet
         if(!ProximityContentManager.IsInitialised()) {
             InitialiseProximityManager();
-            Toast.makeText(MainActivity.this,"Prox Manager Created", Toast.LENGTH_LONG).show();
         }
 
         //Create a runnable that will update the list
@@ -114,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 //ProximityContentManager.getInstance().startContentUpdates();
             }
         }
-        Toast.makeText(MainActivity.this,"ON RESUME", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -125,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "Stopping ProximityContentManager content updates");
             //ProximityContentManager.getInstance().stopContentUpdates();
         }
-        Toast.makeText(MainActivity.this,"ON PAUSE", Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -40,7 +40,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.EoingormanLiveIe.ProximitytestOm7.MainActivity" />
+        <activity
+            android:name="com.EoingormanLiveIe.ProximitytestOm7.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.EoingormanLiveIe.ProximitytestOm7.DisplayItemInfo"
             android:configChanges="keyboardHidden|orientation|screenSize"

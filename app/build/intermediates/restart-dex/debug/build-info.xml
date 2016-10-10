@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     api-level="22"
-    density="xhdpi"
+    density="tvdpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="69929828085131"
+    timestamp="263924955137154"
     token="2011144311170573595"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="MANIFEST_FILE_CHANGE" >
 
     <task
         name="javac"
-        duration="553" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="82" />
+        duration="0" />
     <task
         name="verifier"
-        duration="33" />
+        duration="0" />
 
     <artifact
         location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="69929828085131"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="263924955137154"
+        verifier="MANIFEST_FILE_CHANGE" >
         <artifact
             location="C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

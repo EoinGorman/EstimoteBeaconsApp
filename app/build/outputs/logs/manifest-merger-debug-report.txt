@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:2:1-36:12
 	package
 		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml
@@ -35,7 +35,7 @@ ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\ap
 	android:name
 		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:9:22-65
 application
-ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:11:5-32:19
+ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:11:5-34:19
 MERGED from [com.android.support:design:24.2.1] C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:24.2.1] C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:24.2.1] C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\AndroidManifest.xml:25:5-20
@@ -74,23 +74,27 @@ ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\ap
 	android:name
 		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:21:27-74
 activity#com.EoingormanLiveIe.ProximitytestOm7.MainActivity
-ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:24:9-49
+ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:24:9-26:76
+	android:screenOrientation
+		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:25:13-49
+	android:configChanges
+		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:26:13-74
 	android:name
 		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:24:19-47
 activity#com.EoingormanLiveIe.ProximitytestOm7.DisplayItemInfo
-ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:25:9-31:20
+ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:27:9-33:20
 	android:screenOrientation
-		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:26:13-49
+		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:28:13-49
 	android:configChanges
-		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:27:13-74
+		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:29:13-74
 	android:name
-		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:25:19-50
+		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:27:19-50
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:28:13-30:86
+ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:30:13-32:86
 	android:value
-		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:30:17-83
+		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:32:17-83
 	android:name
-		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:29:17-63
+		ADDED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml:31:17-63
 uses-sdk
 INJECTED from C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:24.2.1] C:\New Programs\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\AndroidManifest.xml:20:5-43

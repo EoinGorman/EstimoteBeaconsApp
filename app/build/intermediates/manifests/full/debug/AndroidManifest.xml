@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.EoingormanLiveIe.ProximitytestOm7"
+    package="com.eurotek.boibeaconapp"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="18"
+        android:minSdkVersion="21"
         android:targetSdkVersion="24" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -26,13 +26,13 @@
         android:required="false" />
 
     <application
-        android:name="com.EoingormanLiveIe.ProximitytestOm7.MyApplication"
+        android:name="com.eurotek.boibeaconapp.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.EoingormanLiveIe.ProximitytestOm7.SetupActivity" >
+        <activity android:name="com.eurotek.boibeaconapp.SetupActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,17 +40,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.EoingormanLiveIe.ProximitytestOm7.MainActivity"
+            android:name="com.eurotek.boibeaconapp.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.EoingormanLiveIe.ProximitytestOm7.DisplayItemInfo"
+            android:name="com.eurotek.boibeaconapp.DisplayItemInfo"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.EoingormanLiveIe.ProximitytestOm7.MainActivity" />
+                android:value="com.eurotek.boibeaconapp.MainActivity" />
         </activity>
+
+        <receiver
+            android:name="com.eurotek.boibeaconapp.DeviceAdmin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
 
         <service
             android:name="com.estimote.sdk.service.BeaconService"

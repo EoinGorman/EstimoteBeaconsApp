@@ -1,7 +1,7 @@
-#Mon Oct 10 23:51:21 BST 2016
-base.0=C\:\\New Programs\\Programs\\WorkPrograms\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_390c52dc74db319c01a72b17dc98563b5b18464a
+#Fri Oct 21 04:22:53 BST 2016
+base.0=C\:\\NewPrograms\\Programs\\WorkPrograms\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_70cf6c8dd09fbabd7e2f85e69f83f9bcbbce03f5
 renamed.1=classes2.dex
 renamed.0=classes.dex
-file.1=C\:\\New Programs\\Programs\\WorkPrograms\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_2d84d7dbad5e2c1654bad7074abfa8d42dae5a3e\\classes.dex
-base.1=C\:\\New Programs\\Programs\\WorkPrograms\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_2d84d7dbad5e2c1654bad7074abfa8d42dae5a3e
-file.0=C\:\\New Programs\\Programs\\WorkPrograms\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_390c52dc74db319c01a72b17dc98563b5b18464a\\classes.dex
+file.1=C\:\\NewPrograms\\Programs\\WorkPrograms\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_6aecc10768eee693edf06eab2016b060ef384198\\classes.dex
+base.1=C\:\\NewPrograms\\Programs\\WorkPrograms\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_6aecc10768eee693edf06eab2016b060ef384198
+file.0=C\:\\NewPrograms\\Programs\\WorkPrograms\\EstimoteSDK\\ProximitytestOm7\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_70cf6c8dd09fbabd7e2f85e69f83f9bcbbce03f5\\classes.dex

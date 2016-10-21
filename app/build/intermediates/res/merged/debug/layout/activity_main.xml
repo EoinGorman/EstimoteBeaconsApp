@@ -48,4 +48,16 @@
         android:background="@color/transparent">
     </ListView>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="numberPassword"
+        android:ems="10"
+        android:id="@+id/passwordInput"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:background="@color/colorPrimary"
+        android:textAlignment="center" />
+
 </RelativeLayout>

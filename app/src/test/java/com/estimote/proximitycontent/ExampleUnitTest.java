@@ -1,4 +1,4 @@
-package com.EoingormanLiveIe.ProximitytestOm7;
+package com.eurotek.boibeaconapp;
 
 import org.junit.Test;
 

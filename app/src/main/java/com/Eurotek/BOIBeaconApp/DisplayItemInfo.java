@@ -7,30 +7,36 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.eurotek.boibeaconapp.estimote.ProximityContentManager;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-public class DisplayItemInfo extends AppCompatActivity {
+public class DisplayItemInfo extends AppCompatActivity implements MediaPlayer.OnPreparedListener, MediaController.MediaPlayerControl{
 
     //Add empty variables for potentially different UI's
     ArrayList<View> views;
-    static MediaPlayer player;
-    static Button playPauseButton;
+    MediaPlayer player;
+    MediaController mediaController;
 
     private RelativeLayout layout;
     private String itemName;
 
+    //--Activity methods----------------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,11 +67,63 @@ public class DisplayItemInfo extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-
-        if(player != null) {
+        if(mediaController != null) {
+            mediaController.hide();
+            mediaController = null;
+        }
+        if (player != null) {
             player.stop();
+            player.release();
+            player = null;
         }
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(mediaController != null) {
+            mediaController.hide();
+            mediaController = null;
+        }
+        if (player != null) {
+            player.stop();
+            player.release();
+            player = null;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mediaController != null) {
+            mediaController.hide();
+            mediaController = null;
+        }
+        if (player != null) {
+            player.stop();
+            player.release();
+            player = null;
+        }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        int eventaction=event.getAction();
+        if(mediaController != null) {
+            mediaController.show();
+        }
+        switch(eventaction) {
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                break;
+            default:
+                break;
+        }
+
+        return super.dispatchTouchEvent(event);
+    }
+    //--------------------------------------------------------------------------------
 
     public void DisplayText(String text, String textCategory) {
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
@@ -147,8 +205,13 @@ public class DisplayItemInfo extends AppCompatActivity {
             player = new MediaPlayer();
             player.setAudioStreamType(AudioManager.STREAM_MUSIC);
             player.setDataSource(getApplicationContext(), filePath);
+            player.setOnPreparedListener(this);
+
+            mediaController = new MediaController(this);
             player.prepare();
             player.start();
+
+            setVolumeControlStream(AudioManager.STREAM_MUSIC);
         }
         catch (Exception e) {
             //TODO: handle exception
@@ -164,16 +227,85 @@ public class DisplayItemInfo extends AppCompatActivity {
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
 
-        VideoView videoView = new VideoView(getApplicationContext());
+        final VideoView videoView = new VideoView(getApplicationContext());
         videoView.setId(RelativeLayout.generateViewId());
         videoView.setPadding(10,10,10,10);
-
         params.addRule(RelativeLayout.CENTER_HORIZONTAL);
         params.addRule(RelativeLayout.ALIGN_TOP);
 
+        mediaController = new MediaController(this);
+        videoView.setOnPreparedListener(this);
+        videoView.setMediaController(mediaController);
+
         videoView.setVideoURI(filePath);
         layout.addView(videoView);
+
+        videoView.requestFocus();
         videoView.start();
         views.add(videoView);
     }
+
+    //--MediaPlayerControl methods----------------------------------------------------
+    public void start() {
+        player.start();
+    }
+
+    public void pause() {
+        player.pause();
+    }
+
+    public int getDuration() {
+        return player.getDuration();
+    }
+
+    public int getCurrentPosition() {
+        return player.getCurrentPosition();
+    }
+
+    public void seekTo(int i) {
+        player.seekTo(i);
+    }
+
+    public boolean isPlaying() {
+        return player.isPlaying();
+    }
+
+    public int getBufferPercentage() {
+        return 0;
+    }
+
+    public boolean canPause() {
+        return true;
+    }
+
+    public boolean canSeekBackward() {
+        return true;
+    }
+
+    public boolean canSeekForward() {
+        return true;
+    }
+
+    @Override
+    public int getAudioSessionId() {
+        return 0;
+    }
+
+    @Override
+    public void onPrepared(MediaPlayer mp) {
+        if(player != null) {
+            mediaController.setMediaPlayer(this);
+        }
+
+        mediaController.setAnchorView(findViewById(R.id.outerLayout));
+
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            public void run() {
+                mediaController.setEnabled(true);
+                mediaController.show();
+            }
+        });
+    }
+    //--------------------------------------------------------------------------------
 }

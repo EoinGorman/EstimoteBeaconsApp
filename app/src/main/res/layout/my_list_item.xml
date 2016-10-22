@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@android:drawable/dialog_holo_light_frame"
-    android:backgroundTint="@color/colorPrimaryDark">
+    android:backgroundTint="@color/colorPrimaryDarkTransparent">
 
     <TextView
         android:id="@+id/label"

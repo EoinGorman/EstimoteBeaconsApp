@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.eurotek.boibeaconapp.SetupActivity"
-    android:weightSum="6">
+    android:weightSum="6.5">
 
     <Space
         android:layout_width="match_parent"
@@ -35,6 +35,7 @@
         style="@android:style/Widget.DeviceDefault.Light.Button.Small"
         android:layout_weight="1"
         android:onClick="RefreshContent"/>
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,5 +49,25 @@
         style="@android:style/Widget.DeviceDefault.Light.Button.Small"
         android:layout_weight="1"
         android:onClick="QuitButton" />
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_weight="0.5"
+        android:visibility="invisible"
+        android:indeterminate="false"
+        android:indeterminateTint="@color/colorAccent"
+        android:max="100" />
+
+    <ProgressBar
+        style="@android:style/Widget.Material.Light.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressAnimation"
+        android:layout_weight="0.5"
+        android:indeterminate="true"
+        android:visibility="invisible" />
 
 </LinearLayout>

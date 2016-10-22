@@ -83,8 +83,6 @@ public class Downloader {
             return true;
         } catch (IOException e) {
             Log.d(myTag, "Error: " + e);
-            //SetupActivity activity = (SetupActivity)ctx;
-            //activity.OutputError(e.toString());
             return false;
         }
     }

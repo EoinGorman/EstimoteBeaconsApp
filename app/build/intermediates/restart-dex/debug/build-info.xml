@@ -5,40 +5,33 @@
     density="tvdpi"
     format="8"
     plugin-version="2.2.1"
-    timestamp="108527403690473"
+    timestamp="264024067798164"
     token="-4815339676424311919"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="420" />
+        duration="744" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="59" />
+        duration="82" />
     <task
         name="verifier"
-        duration="10" />
+        duration="20" />
 
     <artifact
-        location="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-        type="DEX" />
+        location="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="108153879376456"
+        timestamp="264024067798164"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="108527403690473"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

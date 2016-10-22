@@ -3,24 +3,25 @@ package com.eurotek.boibeaconapp;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class SetupActivity extends AppCompatActivity {
@@ -28,9 +29,10 @@ public class SetupActivity extends AppCompatActivity {
     public static int totalItemsToDownload;
     public final static String DOWNLOAD_PATH  = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/com.eurotek.boibeaconapp/";
     public final static String SETTINGS_XML = "settings.xml";
+    public final static String FINISHED_FILE = "downloadComplete.txt";
     private int numberOfContentDownloads;
     private int downloadCount;
-    private static boolean locked;
+    public static boolean locked;
 
     private ArrayList<AsyncTask> threads;
 
@@ -41,6 +43,7 @@ public class SetupActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         threads = new ArrayList<>();
         downloadCount = 0;
+        numberOfContentDownloads = 0;
 
         //Set app to screen pinning mode on start up
         DevicePolicyManager mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
@@ -62,11 +65,30 @@ public class SetupActivity extends AppCompatActivity {
         } else {
             Log.d("Locking", "isLockTaskPermitted: NOT ALLOWED");
         }
+
     }
 
     @Override
     public void onBackPressed() {
         QuitButton(null);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        CancelDownload();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        CancelDownload();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        CancelDownload();
     }
 
 //Button methods----------------------------------------------
@@ -91,11 +113,11 @@ public class SetupActivity extends AppCompatActivity {
                 startActivity(intent);
             }
             else {
-                Toast.makeText(SetupActivity.this,"Files Missing. Please Refresh Content.", Toast.LENGTH_SHORT).show();
+                ShowAlert("Files Missing", "Please Refresh Content");
             }
         }
         else {
-            Toast.makeText(SetupActivity.this,"Please Refresh Content.", Toast.LENGTH_SHORT).show();
+            ShowAlert("Files Missing", "Please Refresh Content");
         }
     }
 
@@ -107,8 +129,7 @@ public class SetupActivity extends AppCompatActivity {
             CancelDownload();
 
             //Delete all previously downloaded content + download directory (I think)
-            boolean shit = DeleteRecursive(new File(DOWNLOAD_PATH.substring(0, DOWNLOAD_PATH.length())));
-            ChangeButtonColor(findViewById(R.id.btn_refresh_content), Color.GRAY);
+            DeleteRecursive(new File(DOWNLOAD_PATH.substring(0, DOWNLOAD_PATH.length())));
 
             //Create our download directory, if it does not exist yet
             File downloadDir = new File(DOWNLOAD_PATH.substring(0, DOWNLOAD_PATH.length()));
@@ -118,11 +139,17 @@ public class SetupActivity extends AppCompatActivity {
             }
 
             //Start download of all content
-            //Toast.makeText(SetupActivity.this,"Starting Download...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SetupActivity.this,"Starting Download...", Toast.LENGTH_SHORT).show();
+
+            ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressBar);
+            progressBar.setProgress(0);
+            progressBar.setMax(100);
+            ProgressBarVisibility(true);
+
             GetAllContent();
         } else {
             //Display message to connect to internet
-            Toast.makeText(SetupActivity.this, "Internet Connection Required.", Toast.LENGTH_SHORT).show();
+            ShowAlert("Internet Connection Required", "Please Connect To The Internet");
         }
     }
 
@@ -140,16 +167,22 @@ public class SetupActivity extends AppCompatActivity {
 
     private void IncrementDownloadCount() {
         downloadCount++;
+        ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        progressBar.setProgress((int)(((float) downloadCount / (float)numberOfContentDownloads) * 100) );
     }
 
     private void CheckIfDownloadsFinished() {
         if(downloadCount == numberOfContentDownloads) {
-            ChangeButtonColor( findViewById(R.id.btn_refresh_content), Color.GREEN);
+            File file = new File(DOWNLOAD_PATH + FINISHED_FILE);
+            try {
+                file.createNewFile();
+                ShowAlert("Download Complete!", "Your download has finished successfully.");
+            }
+            catch (IOException e) {
+                ShowAlert("Download Error", "A download error has occured.\nPlease try again.");
+            }
+            ProgressBarVisibility(false);
         }
-    }
-
-    private void ChangeButtonColor(View view, int color) {
-        view.getBackground().setColorFilter(color, PorterDuff.Mode.DARKEN);
     }
 
     //Helper method to determine if Internet connection is available.
@@ -230,101 +263,10 @@ public class SetupActivity extends AppCompatActivity {
         }
     }
 
-//Async Tasks--------------------------------------------------
-/*
-	 * AsyncTask that will download the xml file for us and store it locally.
-	 * After the download is done we'll parse the local file.
-*/
-private class SettingsDownloadTask extends AsyncTask<Void, Void, Void> {
 
-    @Override
-    protected Void doInBackground(Void... arg0) {
-        //Download the file
-        try {
-            if(Downloader.DownloadFromUrl("https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/" + SETTINGS_XML,
-                                        new FileOutputStream(DOWNLOAD_PATH.toString() + SETTINGS_XML), getApplicationContext())) {
-                //Toast.makeText(SetupActivity.this,"Downloading from: https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/beacons.xml", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                //Toast.makeText(getApplicationContext(),"Download Failed: https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/beacons.xml", Toast.LENGTH_SHORT).show();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            //Toast.makeText(SetupActivity.this,"Error: " + e.toString(), Toast.LENGTH_LONG).show();
-        }
-
-        return null;
-    }
-
-    @Override
-    protected void onPostExecute(Void result){
-        //Parse out Item Names for downloading
-        ChangeButtonColor(findViewById(R.id.btn_refresh_content), Color.BLUE);
-        GetItems();
-    }
-}
-
-    //Accepts a list of strings as argument, downloads xml files for each string input
-    private class ItemsDownloadTask extends AsyncTask<ArrayList<String>, Void, ArrayList<String>> {
-
-        @Override
-        protected ArrayList<String> doInBackground(ArrayList<String>... arg0) {
-            //Download the file
-            try {
-                for(int i = 0; i < arg0[0].size(); i++) {
-                    if(Downloader.DownloadFromUrl("https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/Items/" + arg0[0].get(i) + ".xml",
-                            new FileOutputStream(DOWNLOAD_PATH.toString() + arg0[0].get(i) + ".xml"), getApplicationContext())) {
-                        //Toast.makeText(SetupActivity.this,"Downloading from: " + arg0[0], Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        //Toast.makeText(getApplicationContext(),"Download Failed: " + arg0[0], Toast.LENGTH_SHORT).show();
-                    }
-                }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                //Toast.makeText(SetupActivity.this,"Error: " + e.toString(), Toast.LENGTH_LONG).show();
-            }
-
-            return arg0[0];
-        }
-
-        @Override
-        protected void onPostExecute(ArrayList<String> result){
-            //Parse out Item Names for downloading
-            ChangeButtonColor(findViewById(R.id.btn_refresh_content), Color.RED);
-            GetItemContent(result);
-        }
-    }
-
-    private class ContentDownloadTask extends AsyncTask<String, Void, Void> {
-
-        @Override
-        protected Void doInBackground(String... arg0) {
-            try {
-                if(Downloader.DownloadFromUrl(arg0[0], new FileOutputStream(arg0[1]), getApplicationContext())) {
-                    //Toast.makeText(SetupActivity.this,"Downloading from: " + arg0[0], Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    //Toast.makeText(getApplicationContext(),"Download Failed: " + arg0[0], Toast.LENGTH_SHORT).show();
-                }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                //Toast.makeText(SetupActivity.this,"Error: " + e.toString(), Toast.LENGTH_LONG).show();
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result){
-            IncrementDownloadCount();
-            CheckIfDownloadsFinished();
-        }
-    }
 
     public boolean DeleteRecursive(File fileOrDirectory)
     {
-        ChangeButtonColor(findViewById(R.id.btn_refresh_content), Color.BLACK);
         if (fileOrDirectory.isDirectory())
         {
             for (File child : fileOrDirectory.listFiles())
@@ -343,9 +285,134 @@ private class SettingsDownloadTask extends AsyncTask<Void, Void, Void> {
         for (AsyncTask task : threads) {
             task.cancel(true);
         }
+        threads = new ArrayList<>();
+        downloadCount = 0;
+        numberOfContentDownloads = 0;
     }
 
-    public void OutputError(String error) {
-        Toast.makeText(this, error, Toast.LENGTH_SHORT);
+    public void ProgressBarVisibility(boolean active) {
+        ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        ProgressBar progressAnim = (ProgressBar)findViewById(R.id.progressAnimation);
+
+        if(!active) {
+            progressBar.setVisibility(View.INVISIBLE);
+            progressAnim.setVisibility(View.INVISIBLE);
+        }
+        else{
+            progressBar.setVisibility(View.VISIBLE);
+            progressAnim.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void ShowAlert(String title, String body) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle(title);
+        dialog.setMessage(body);
+        dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // continue with delete
+            }
+        });
+        dialog.setIcon(android.R.drawable.ic_dialog_alert);
+
+        AlertDialog alert = dialog.create();
+        alert.show();
+    }
+
+    public void MakeToast(String message) {
+        Toast.makeText(SetupActivity.this, message, Toast.LENGTH_SHORT).show();
+    }
+
+//Async Tasks--------------------------------------------------
+/*
+	 * AsyncTask that will download the xml file for us and store it locally.
+	 * After the download is done we'll parse the local file.
+*/
+private class SettingsDownloadTask extends AsyncTask<Void, Void, Boolean> {
+
+    @Override
+    protected Boolean doInBackground(Void... arg0) {
+        //Download the file
+        try {
+            return Downloader.DownloadFromUrl("https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/" + SETTINGS_XML,
+                                        new FileOutputStream(DOWNLOAD_PATH.toString() + SETTINGS_XML), getApplicationContext());
+        }
+        catch (FileNotFoundException e)
+        {
+            return false;
+        }
+    }
+
+    @Override
+    protected void onPostExecute(Boolean result){
+        if(result) {
+            //Parse out Item Names for downloading
+            GetItems();
+        }
+        else {
+            ProgressBarVisibility(false);
+            ShowAlert("Download Error", "A download error has occured.\nPlease try again.");
+        }
+    }
+}
+
+    //Accepts a list of strings as argument, downloads xml files for each string input
+    private class ItemsDownloadTask extends AsyncTask<ArrayList<String>, Void, ArrayList<String>> {
+
+        @Override
+        protected ArrayList<String> doInBackground(ArrayList<String>... arg0) {
+            //Download the file
+            try {
+                for(int i = 0; i < arg0[0].size(); i++) {
+                    if(!Downloader.DownloadFromUrl("https://raw.githubusercontent.com/EoinGorman/BeaconProximityApp/master/xml/Items/" + arg0[0].get(i) + ".xml",
+                            new FileOutputStream(DOWNLOAD_PATH.toString() + arg0[0].get(i) + ".xml"), getApplicationContext()))
+                    {
+                        return null;
+                    }
+                }
+
+                return arg0[0];
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                return null;
+            }
+
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<String> result) {
+            //Parse out Item Names for downloading
+            if (result != null) {
+                GetItemContent(result);
+            }
+            else {
+                ProgressBarVisibility(false);
+                ShowAlert("Download Error", "A download error has occured.\nPlease try again.");
+            }
+        }
+    }
+
+    private class ContentDownloadTask extends AsyncTask<String, String, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... arg0) {
+            try {
+                return Downloader.DownloadFromUrl(arg0[0], new FileOutputStream(arg0[1]), getApplicationContext());
+            } catch (FileNotFoundException e) {
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                IncrementDownloadCount();
+                CheckIfDownloadsFinished();
+            }
+            else{
+                ProgressBarVisibility(false);
+                ShowAlert("Download Error", "A download error has occured.\nPlease try again.");
+            }
+        }
     }
 }

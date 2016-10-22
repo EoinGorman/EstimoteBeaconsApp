@@ -70,7 +70,7 @@ public class BeaconXMLPullParser {
 
                     case XmlPullParser.END_TAG:
                         if(tagname.equalsIgnoreCase(KEY_DOWNLOAD_COUNT)) {
-                            SetupActivity.totalItemsToDownload = Integer.parseInt(curText);
+                            SetupActivity.totalItemsToDownload = Integer.parseInt(curText) + 1;//The +1 is for the file we create at end of downloads to confirm download finished
                         }
                         else if(tagname.equalsIgnoreCase(KEY_PIN)) {
                             SetupActivity.unlockPin = curText;

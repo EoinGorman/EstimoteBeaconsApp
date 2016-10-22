@@ -1,12 +1,15 @@
 package com.eurotek.boibeaconapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -45,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(!SetupActivity.locked) {
+            startLockTask();
+            SetupActivity.locked = true;
+        }
+
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getSupportActionBar().setTitle(R.string.mainActivityTitle);
@@ -106,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 backPressCount = 0;
             } else {
                 passwordInput.setVisibility(View.VISIBLE);
-                Toast.makeText(getApplicationContext(), "Press Back Button to return to content.", Toast.LENGTH_LONG).show();
+                ShowAlert("Access Restricted", "Press the Back Button to return to content");
             }
         }
     }
@@ -142,6 +150,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        backPressCount = 0;
+        return super.dispatchTouchEvent(event);
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
 
@@ -173,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
         if(ProximityContentManager.getInstance() != null) {
             //ProximityContentManager.getInstance().destroy();
         }
-        Toast.makeText(MainActivity.this,"ON DESTROY", Toast.LENGTH_SHORT).show();
     }
 
     public void DisplayList(int beaconMajorNum) {
@@ -189,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                     //Get List View and Create adapter
                     MyAdapter adapter = new MyAdapter(this, closestBeacon.GetItemNames());
                     listView.setAdapter(adapter);
+                    listView.setOnItemLongClickListener(mMessageHeldHandler);
                     listView.setOnItemClickListener(mMessageClickedHandler);
                 }
             }
@@ -199,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
             //Get List View and Create adapter empty
             MyAdapter adapter = new MyAdapter(this, new ArrayList<String>());
             listView.setAdapter(adapter);
+            listView.setOnItemLongClickListener(mMessageHeldHandler);
             listView.setOnItemClickListener(mMessageClickedHandler);
         }
     }
@@ -214,6 +229,18 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    //Function for when item in list is held
+    private AdapterView.OnItemLongClickListener mMessageHeldHandler = new AdapterView.OnItemLongClickListener() {
+        public boolean onItemLongClick(AdapterView parent, View v, int position, long id) {
+            // Do something in response to the click
+            String itemName = closestBeacon.GetItemNames().get(position);
+            Intent intent = new Intent(getApplicationContext(), DisplayItemInfo.class);
+            intent.putExtra(EXTRA_MESSAGE, itemName);
+            startActivity(intent);
+            return true;
+        }
+    };
+
     public void CheckPassword(String input) {
         if(input.equals(SetupActivity.unlockPin)) {
             //If - password is correct
@@ -225,4 +252,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void ShowAlert(String title, String body) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle(title);
+        dialog.setMessage(body);
+        dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // continue with delete
+            }
+        });
+        dialog.setIcon(android.R.drawable.ic_dialog_alert);
+
+        AlertDialog alert = dialog.create();
+        alert.show();
+    }
 }

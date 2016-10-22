@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_797fba21679c4d9582512fe0f23e90290ff06d49\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -27,78 +36,6 @@
         revision="24.0.2"
         sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
         <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_88ec7c9c8dc2631c73556e3415cf7a7c84d85744\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_6edaee9055017dbd128427da176a041812e8e40b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_988504d3562e08ae5116366c566b3c981d417bb3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.estimote\sdk\0.11.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8ff85bb08facfbaa19d529be27738fd354baaab7">
-        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.estimote-sdk-0.11.1_4eebea71d3b15db6579a32874ee1debba97617cb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\NewPrograms\Programs\Languages&amp;SDKs\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_7d6240aeaef71dfe98745bdd9f32cf2322d6e1d8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_d45bb97975f66035c0f8f7042840e75dbad9f5d5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b31d6cdcf11ec91d0e3a3ea2d48a1f90e746f9b0">
-        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_6aecc10768eee693edf06eab2016b060ef384198\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_4320e3a3681825d6fb555ed227209dadf5c5d9bb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_797fba21679c4d9582512fe0f23e90290ff06d49\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -120,6 +57,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_6edaee9055017dbd128427da176a041812e8e40b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_988504d3562e08ae5116366c566b3c981d417bb3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -135,6 +90,42 @@
         revision="24.0.2"
         sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
         <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_e32ffe00857704ad725dce2319c7d6e4c0897f2c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.estimote\sdk\0.11.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8ff85bb08facfbaa19d529be27738fd354baaab7">
+        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.estimote-sdk-0.11.1_4eebea71d3b15db6579a32874ee1debba97617cb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\NewPrograms\Programs\Languages&amp;SDKs\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_7d6240aeaef71dfe98745bdd9f32cf2322d6e1d8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c0318e6b53022177aab2e1db3864f4db1a1d478f">
+        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_6aecc10768eee693edf06eab2016b060ef384198\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_d45bb97975f66035c0f8f7042840e75dbad9f5d5\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -162,6 +153,15 @@
         revision="24.0.2"
         sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
         <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_afae5538546eef6408aefe17b9d115eac3145738\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_4320e3a3681825d6fb555ed227209dadf5c5d9bb\classes.dex" />
     </item>
     <item
         is-multidex="true"

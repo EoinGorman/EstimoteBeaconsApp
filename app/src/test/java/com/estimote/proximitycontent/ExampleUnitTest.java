@@ -1,4 +1,4 @@
-package com.eurotek.boibeaconapp;
+package com.eurotek.beaconapp;
 
 import org.junit.Test;
 

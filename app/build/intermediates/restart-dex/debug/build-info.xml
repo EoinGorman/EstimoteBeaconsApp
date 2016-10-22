@@ -5,32 +5,32 @@
     density="tvdpi"
     format="8"
     plugin-version="2.2.1"
-    timestamp="264024067798164"
-    token="-4815339676424311919"
+    timestamp="267224139494053"
+    token="5578737036174182144"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="744" />
+        duration="736" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="82" />
+        duration="32" />
     <task
         name="verifier"
-        duration="20" />
+        duration="8" />
 
     <artifact
-        location="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\outputs\apk\app-debug.apk"
+        location="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\BeaconsApp\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="264024067798164"
+        timestamp="267224139494053"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\ProximitytestOm7\app\build\outputs\apk\app-debug.apk"
+            location="C:\NewPrograms\Programs\WorkPrograms\EstimoteSDK\BeaconsApp\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
 

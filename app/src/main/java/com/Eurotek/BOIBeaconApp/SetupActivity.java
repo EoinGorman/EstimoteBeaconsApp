@@ -28,7 +28,7 @@ public class SetupActivity extends AppCompatActivity {
     public static String unlockPin = "";
     public static int totalItemsToDownload;
     public final static String DOWNLOAD_PATH  = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/com.eurotek.boibeaconapp/";
-    public final static String SETTINGS_XML = "settings.xml";
+    public final static String SETTINGS_XML = "boisettings.xml";
     public final static String FINISHED_FILE = "downloadComplete.txt";
     private int numberOfContentDownloads;
     private int downloadCount;
